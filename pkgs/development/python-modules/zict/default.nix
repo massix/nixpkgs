@@ -3,11 +3,11 @@
 
 buildPythonPackage rec {
   pname = "zict";
-  version = "2.2.0";
+  version = "3.0.0";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-1zZsLiKTMUES3PJDIQhCime5J7AABWGf7vwxDRLYM/M=";
+    hash = "sha256-4yHiY7apeq/AeQw8+zwEZWtwZuZzjDf//MqV2APJ+6U=";
   };
 
   disabled = pythonOlder "3.6";
