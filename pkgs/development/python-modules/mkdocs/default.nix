@@ -16,6 +16,7 @@
 , markdown
 , mergedeep
 , packaging
+, platformdirs
 , pyyaml
 , pyyaml-env-tag
 , watchdog
@@ -28,7 +29,7 @@
 
 buildPythonPackage rec {
   pname = "mkdocs";
-  version = "1.4.2";
+  version = "1.5.2";
   format = "pyproject";
   disabled = pythonOlder "3.6";
 
@@ -36,7 +37,7 @@ buildPythonPackage rec {
     owner = pname;
     repo = pname;
     rev = "refs/tags/${version}";
-    hash = "sha256-/NxiKbCd2acYcNe5ww3voM9SGVE2IDqknngqApkDbNs=";
+    hash = "sha256-9sV1bewsHVJEc2kTyGxDM6SjDTEKEc/HSY6gWBC5tvE=";
   };
 
   postPatch = ''
@@ -59,6 +60,7 @@ buildPythonPackage rec {
     importlib-metadata
     watchdog
     packaging
+    platformdirs
   ];
 
   nativeCheckInputs = [
