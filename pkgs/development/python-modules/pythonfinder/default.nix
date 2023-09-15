@@ -14,14 +14,14 @@
 
 buildPythonPackage rec {
   pname = "pythonfinder";
-  version = "1.3.2";
+  version = "2.0.5";
   format = "pyproject";
 
   src = fetchFromGitHub {
     owner = "sarugaku";
     repo = pname;
     rev = "refs/tags/${version}";
-    hash = "sha256-sfoAS3QpD78we8HcXpxjSyEIN1xLRVLExaM3oXe6tLU=";
+    hash = "sha256-L/+6w5lLqHO5c9CThoUPOHXRPVxBlOWFDAmfoYxRw5g=";
   };
 
   nativeBuildInputs = [
