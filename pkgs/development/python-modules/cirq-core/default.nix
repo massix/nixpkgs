@@ -32,7 +32,7 @@
 
 buildPythonPackage rec {
   pname = "cirq-core";
-  version = "1.1.0";
+  version = "1.2.0";
   format = "setuptools";
 
   # Upstream package is broken on Python 3.11 https://github.com/quantumlib/Cirq/issues/6018
@@ -42,7 +42,7 @@ buildPythonPackage rec {
     owner = "quantumlib";
     repo = "cirq";
     rev = "refs/tags/v${version}";
-    hash = "sha256-5j4hbG95KRfRQTyyZgoNp/eHIcy0FphyEhbYnzyUMO4=";
+    hash = "sha256-KEei5PJ0ammsduZVmMh2vaW3f58DYI4BCrFCl/SjUoo=";
   };
 
   sourceRoot = "${src.name}/${pname}";
