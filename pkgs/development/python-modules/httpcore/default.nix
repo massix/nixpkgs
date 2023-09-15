@@ -20,7 +20,7 @@
 
 buildPythonPackage rec {
   pname = "httpcore";
-  version = "0.17.2";
+  version = "0.18.0";
   format = "setuptools";
 
   disabled = pythonOlder "3.7";
@@ -29,7 +29,7 @@ buildPythonPackage rec {
     owner = "encode";
     repo = pname;
     rev = "refs/tags/${version}";
-    hash = "sha256-qAoORhzBbjXxgtzTqbAxWBxrohzfwDWm5mxxrgeXt48=";
+    hash = "sha256-UEpERsB7jZlMqRtyHxLYBisfDbTGaAiTtsgU1WUpvtA=";
   };
 
   propagatedBuildInputs = [
