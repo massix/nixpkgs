@@ -33,7 +33,7 @@
 
 buildPythonPackage rec {
   pname = "pydantic";
-  version = "1.10.9";
+  version = "2.3.0";
   format = "setuptools";
 
   outputs = [
@@ -48,7 +48,7 @@ buildPythonPackage rec {
     owner = "pydantic";
     repo = pname;
     rev = "refs/tags/v${version}";
-    hash = "sha256-POqMxBJUFFS1TnO9h5W7jYwFlukBOng0zbtq4kzmMB4=";
+    hash = "sha256-toqrWg8bYzc3UmvG/YmXawfmT8nqaA9fxy24k1cdj+M=";
   };
 
   patches = [
