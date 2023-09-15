@@ -5,11 +5,11 @@
 
 buildPythonPackage rec {
   pname = "docopt-ng";
-  version = "0.8.1";
+  version = "0.9.0";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-6mphooj8hk7uayLW/iiqIC1Z/Ib60F8W/145zE6n9uM=";
+    hash = "sha256-kcbaELW7by6eJTRYKfuCeMeK8Bn2/ECIetSbBgSDsdc=";
   };
 
   pythonImportsCheck = [ "docopt" ];
