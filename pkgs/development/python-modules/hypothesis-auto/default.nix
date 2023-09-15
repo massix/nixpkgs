@@ -11,14 +11,14 @@
 
 buildPythonPackage rec {
   pname = "hypothesis-auto";
-  version = "1.1.4";
+  version = "1.1.5";
   format = "pyproject";
 
   disabled = pythonOlder "3.6";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-XiwvsJ3AmEJRLYBjC7eSNZodM9LARzrUfuI9oL6eMrE=";
+    hash = "sha256-U0vcOB9jXmUV5v2IwybVu2arY1FpPnKkP7m2kbD1kRw=";
   };
 
   patches = [
