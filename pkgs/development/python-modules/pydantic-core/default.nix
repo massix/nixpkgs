@@ -16,14 +16,14 @@
 
 buildPythonPackage rec {
   pname = "pydantic-core";
-  version = "2.3.0";
+  version = "2.7.0";
   format = "pyproject";
 
   src = fetchFromGitHub {
     owner = "pydantic";
     repo = "pydantic-core";
-    rev = "v${version}";
-    hash = "sha256-Wi+b+xiJtVi3KIy6bzT29kyHFSI7mbMNrLa/Iu3cTEY=";
+    rev = "refs/tags/v${version}";
+    hash = "sha256-cAOoMdjO7FWNRRsnakoEv5aL368eWD8TjzSZAC37E4U=";
   };
 
   patches = [
