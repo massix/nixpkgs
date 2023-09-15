@@ -20,7 +20,7 @@
 
 let
   pname = "django-redis";
-  version = "5.2.0";
+  version = "5.3.0";
 in
 buildPythonPackage {
   inherit pname version;
@@ -30,8 +30,8 @@ buildPythonPackage {
   src = fetchFromGitHub {
     owner = "jazzband";
     repo = "django-redis";
-    rev = version;
-    hash = "sha256-e8wCgfxBT+WKFY4H83CTMirTpQym3QAoeWnXbRCDO90=";
+    rev = "refs/tags/${version}";
+    hash = "sha256-eX9rUUvpkRrkZ82YalWn8s9DTw6nsbGzi1A6ibRoQGw=";
   };
 
   postPatch = ''
