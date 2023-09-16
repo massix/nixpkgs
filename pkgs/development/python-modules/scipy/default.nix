@@ -215,7 +215,7 @@ in buildPythonPackage {
 
   meta = with lib; {
     description = "SciPy (pronounced 'Sigh Pie') is open-source software for mathematics, science, and engineering";
-    downloadUrl = "https://github.com/scipy/scipy";
+    downloadPage = "https://github.com/scipy/scipy";
     homepage = "https://www.scipy.org/";
     license = licenses.bsd3;
     maintainers = with maintainers; [ fridh doronbehar ];
