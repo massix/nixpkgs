@@ -17,14 +17,14 @@
 let
   pydantic-core = buildPythonPackage rec {
     pname = "pydantic-core";
-    version = "2.7.0";
+    version = "2.6.3";
     format = "pyproject";
 
     src = fetchFromGitHub {
       owner = "pydantic";
       repo = "pydantic-core";
       rev = "refs/tags/v${version}";
-      hash = "sha256-cAOoMdjO7FWNRRsnakoEv5aL368eWD8TjzSZAC37E4U=";
+      hash = "sha256-bEVACTlzELXPoCtEHMR1s87KJn/qnE0lO1O4RmdjmPM=";
     };
 
     patches = [
@@ -34,7 +34,7 @@ let
     cargoDeps = rustPlatform.fetchCargoTarball {
       inherit src;
       name = "${pname}-${version}";
-      hash = "sha256-9xMr7+x+TO0eI2wTCyiyI/L8XyaRw4SUnhUYZoNXO2U=";
+      hash = "sha256-h9SmMLg/W11h/SQz8Te5OoCKdyG6Fctc5ftqbVQFSwU=";
     };
 
     nativeBuildInputs = [
