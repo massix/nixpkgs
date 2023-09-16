@@ -65,7 +65,7 @@ buildPythonPackage rec {
     # AssertionError: assert 'crypto' in ['curl']
     "test_ssl_in_static_libs"
     # tests that require curl with http3Support
-    "OptionConstantsSettingTest.test_http_version_3"
+    "test_http_version_3"
   ] ++ lib.optionals (stdenv.isDarwin && stdenv.isAarch64) [
     # Fatal Python error: Segmentation fault
     "cadata_test"
