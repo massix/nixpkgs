@@ -1,7 +1,6 @@
 { lib
 , buildPythonPackage
 , fetchPypi
-, mock
 , pytest-httpbin
 , pytestCheckHook
 , pythonOlder
@@ -41,6 +40,9 @@ buildPythonPackage rec {
 
   disabledTests = [
     "TestVCRConnection"
+    # https://github.com/kevin1024/vcrpy/issues/645
+    "test_get_vcr_with_matcher"
+    "test_testcase_playback"
   ];
 
   pythonImportsCheck = [
