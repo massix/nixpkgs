@@ -3,6 +3,8 @@
 , buildPythonPackage
 , certifi
 , fetchFromGitHub
+, hatchling
+, hatch-fancy-pypi-readme
 , h11
 , h2
 , pproxy
@@ -21,7 +23,7 @@
 buildPythonPackage rec {
   pname = "httpcore";
   version = "0.18.0";
-  format = "setuptools";
+  format = "pyproject";
 
   disabled = pythonOlder "3.7";
 
@@ -31,6 +33,11 @@ buildPythonPackage rec {
     rev = "refs/tags/${version}";
     hash = "sha256-UEpERsB7jZlMqRtyHxLYBisfDbTGaAiTtsgU1WUpvtA=";
   };
+
+  nativeBuildInputs = [
+    hatchling
+    hatch-fancy-pypi-readme
+  ];
 
   propagatedBuildInputs = [
     anyio
@@ -59,16 +66,6 @@ buildPythonPackage rec {
 
   pythonImportsCheck = [
     "httpcore"
-  ];
-
-  preCheck = ''
-    # remove upstreams pytest flags which cause:
-    # httpcore.ConnectError: TLS/SSL connection has been closed (EOF) (_ssl.c:997)
-    rm setup.cfg
-  '';
-
-  pytestFlagsArray = [
-    "--asyncio-mode=strict"
   ];
 
   __darwinAllowLocalNetworking = true;
