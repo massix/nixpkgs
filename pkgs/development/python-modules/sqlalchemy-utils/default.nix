@@ -92,6 +92,7 @@ buildPythonPackage rec {
     "--deselect tests/functions/test_database.py::TestDatabasePostgresCreateDatabaseCloseConnection::test_create_database_twice"
     "--deselect tests/functions/test_database.py::TestDatabasePostgresPg8000::test_create_and_drop"
     "--deselect tests/functions/test_database.py::TestDatabasePostgresPsycoPG2CFFI::test_create_and_drop"
+    "--deselect tests/functions/test_database.py::TestDatabasePostgresPsycoPG3::test_create_and_drop"
   ];
 
   meta = with lib; {
