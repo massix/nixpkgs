@@ -8,7 +8,7 @@
 , mkdocs-autorefs
 , pymdown-extensions
 , pytestCheckHook
-, pdm-pep517
+, pdm-backend
 , pythonOlder
 }:
 
@@ -33,7 +33,7 @@ buildPythonPackage rec {
   '';
 
   nativeBuildInputs = [
-    pdm-pep517
+    pdm-backend
   ];
 
   propagatedBuildInputs = [
@@ -61,6 +61,8 @@ buildPythonPackage rec {
   disabledTests = [
     # Not all requirements are available
     "test_disabling_plugin"
+    # Circular dependency on mkdocstrings-python
+    "test_extended_templates"
   ];
 
   meta = with lib; {
