@@ -32,12 +32,6 @@ buildPythonPackage rec {
     six
   ];
 
-  preCheck = ''
-    # Remove assertion that doesn't hold for Flask 2.1.0
-    substituteInPlace tests/test_server.py \
-      --replace "assert response.headers['Location'].startswith('https://')" ""
-  '';
-
   nativeCheckInputs = [
     pytestCheckHook
     requests
