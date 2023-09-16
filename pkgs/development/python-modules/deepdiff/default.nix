@@ -11,6 +11,7 @@
 , python-dateutil
 , pyyaml
 , toml
+, tomli-w
 , pythonOlder
 }:
 
@@ -52,7 +53,14 @@ buildPythonPackage rec {
     numpy
     pytestCheckHook
     python-dateutil
+    tomli-w
   ] ++ passthru.optional-dependencies.cli;
+
+  disabledTests = [
+    # not compatible with pydantic 2.x
+    "test_pydantic1"
+    "test_pydantic2"
+  ];
 
   pythonImportsCheck = [
     "deepdiff"
