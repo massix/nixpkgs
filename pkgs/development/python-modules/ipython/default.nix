@@ -83,7 +83,7 @@ buildPythonPackage rec {
 
   meta = with lib; {
     description = "IPython: Productive Interactive Computing";
-    downloadUrl = "https://github.com/ipython/ipython/";
+    downloadPage = "https://github.com/ipython/ipython/";
     homepage = "https://ipython.org/";
     changelog = "https://github.com/ipython/ipython/blob/${version}/docs/source/whatsnew/version${lib.versions.major version}.rst";
     license = licenses.bsd3;
