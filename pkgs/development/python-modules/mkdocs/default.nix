@@ -14,8 +14,10 @@
 , importlib-metadata
 , jinja2
 , markdown
+, markupsafe
 , mergedeep
 , packaging
+, pathspec
 , platformdirs
 , pyyaml
 , pyyaml-env-tag
@@ -40,27 +42,25 @@ buildPythonPackage rec {
     hash = "sha256-9sV1bewsHVJEc2kTyGxDM6SjDTEKEc/HSY6gWBC5tvE=";
   };
 
-  postPatch = ''
-    substituteInPlace pyproject.toml \
-      --replace "Markdown >=3.2.1, <3.4" "Markdown"
-  '';
-
   nativeBuildInputs = [
     hatchling
   ];
 
   propagatedBuildInputs = [
     click
+    ghp-import
     jinja2
     markdown
+    markupsafe
     mergedeep
+    packaging
+    pathspec
+    platformdirs
     pyyaml
     pyyaml-env-tag
-    ghp-import
-    importlib-metadata
     watchdog
-    packaging
-    platformdirs
+  ] ++ lib.optionals (pythonOlder "3.10") [
+    importlib-metadata
   ];
 
   nativeCheckInputs = [
