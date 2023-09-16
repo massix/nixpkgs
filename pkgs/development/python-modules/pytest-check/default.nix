@@ -11,7 +11,8 @@ buildPythonPackage rec {
   format = "flit";
 
   src = fetchPypi {
-    inherit pname version;
+    pname = "pytest_check";
+    inherit version;
     hash = "sha256-3rN/iB36DV4kbymWI4rvdFp5ANezUjp0FgV3K4osSVI=";
   };
 
