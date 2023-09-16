@@ -76,12 +76,14 @@ buildPythonPackage {
     # ModuleNotFoundError: No module named 'test_cache_options'
     "test_custom_key_function"
     # ModuleNotFoundError: No module named 'test_client'
+    "test_delete_pattern_calls_delete_for_given_keys"
     "test_delete_pattern_calls_get_client_given_no_client"
     "test_delete_pattern_calls_make_pattern"
-    "test_delete_pattern_calls_scan_iter_with_count_if_itersize_given"
-    "test_delete_pattern_calls_scan_iter_with_count_if_itersize_given"
+    "test_delete_pattern_calls_pipeline_delete_and_execute"
     "test_delete_pattern_calls_scan_iter"
-    "test_delete_pattern_calls_delete_for_given_keys"
+    "test_delete_pattern_calls_scan_iter_with_count_if_itersize_given"
+    "test_delete_pattern_calls_scan_iter_with_count_if_itersize_given"
+
   ];
 
   meta = with lib; {
