@@ -1,9 +1,13 @@
 { lib, buildPythonPackage, fetchPypi
+, pythonOlder
 , pytestCheckHook, setuptools-scm, tempora  }:
 
 buildPythonPackage rec {
   pname = "portend";
   version = "3.2.0";
+  format = "pyproject";
+
+  disabled = pythonOlder "3.8";
 
   src = fetchPypi {
     inherit pname version;
@@ -15,6 +19,10 @@ buildPythonPackage rec {
   propagatedBuildInputs = [ tempora ];
 
   nativeCheckInputs = [ pytestCheckHook ];
+
+  pythonImportsCheck = [
+    "portend"
+  ];
 
   # Some of the tests use localhost networking.
   __darwinAllowLocalNetworking = true;
