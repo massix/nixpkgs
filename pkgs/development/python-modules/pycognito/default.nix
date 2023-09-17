@@ -47,6 +47,11 @@ buildPythonPackage rec {
 
   pytestFlagsArray = [ "tests.py" ];
 
+  disabledTests = [
+    # requires network access
+    "test_srp_requests_http_auth"
+  ];
+
   pythonImportsCheck = [ "pycognito" ];
 
   meta = with lib; {
