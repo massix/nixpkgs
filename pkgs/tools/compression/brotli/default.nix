@@ -19,6 +19,15 @@ stdenv.mkDerivation (finalAttrs: {
     hash = "sha256-MvceRcle2dSkkucC2PlsCizsIf8iv95d8Xjqew266wc=";
   };
 
+  # With the patch introduced in the following PR, brotli searches for shared objects from ${brotli}/lib instead of ${brotli.lib}/lib in darwin.
+  # This causes a runtime error in nixpkgs.
+  # https://github.com/google/brotli/pull/976
+  postPatch = lib.optionalString stdenv.isDarwin ''
+    substituteInPlace CMakeLists.txt \
+      --replace "set(CMAKE_MACOS_RPATH TRUE)" "" \
+      --replace 'set(CMAKE_INSTALL_NAME_DIR "''${CMAKE_INSTALL_PREFIX}/lib")' ""
+  '';
+
   nativeBuildInputs = [ cmake ];
 
   cmakeFlags = lib.optional staticOnly "-DBUILD_SHARED_LIBS=OFF";
