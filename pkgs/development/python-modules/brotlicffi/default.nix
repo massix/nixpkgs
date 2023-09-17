@@ -9,7 +9,7 @@
 buildPythonPackage rec {
   pname = "brotlicffi";
   version = "1.1.0.0";
-  disabled = pythonOlder "3.6";
+  disabled = pythonOlder "3.7";
 
   src = fetchFromGitHub {
     owner = "python-hyper";
